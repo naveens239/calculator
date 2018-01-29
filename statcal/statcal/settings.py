@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'la%pkq$_e!+5zij0dm8k@rh!l(3cyyz@$&tkkm-!%rtexb(uus'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -127,4 +127,4 @@ STATICFILES_DIRS  = (
     os.path.join(BASE_DIR, "static_in_pro", "our_static"),
     # '/var/www/static/',
 )
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
