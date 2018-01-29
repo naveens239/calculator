@@ -1,0 +1,208 @@
+ {% extends "base.html"%}
+ {% load staticfiles %}
+ {% block head_title%}{{block.super}}{% endblock%}
+ {% block jumbotron %}
+
+<div>
+<!--Top container -->
+<div class="jumbotron">
+    <div class="container">
+    <div class ="row">
+        <div class='col-sm-12' style="margin-top: 245px;">
+                <h2>A/B split test significance calculator</h2>
+                <p>Get comprehensive insights about testing, optimization, UX, design, and more.</p>
+    
+                </div>
+                
+    </div>
+    </div>
+</div>
+<!--Calculator container -->
+<div class="caljumbotron">
+    <div class="container">
+        <div class ="row">
+            <div class='col-sm-12' style="margin-top: 50px;">
+                <h2>Are your results significant?</h2>
+                <div  id = "content-desktop" class="table-responsive">
+                    <form id="calDForm" action="" onsubmit="dcalFunction()" novalidate="">
+                        <table class="table table-bordered table-size">
+                            <tr>
+                              <td id="blank">&nbsp;</td>
+                              <th id = "col1" headers="blank" class="cell-bg">Control</th>
+                              <th id = "col2" headers="blank" class="cell-bg">Variation</th>
+                            </tr>
+                            <tr>
+                              <th id = "c1">Number of Visitors</th>
+                              <td  headers="col1 c1" class="cell-bg"><input id = "dc1c1" type="number"/></td>
+                              <td  headers="col2 c1" class="cell-bg"><input id = "dc2c1" type="number"/></td>
+                            </tr>
+                            <tr>
+                               <th id= "c2">Number of Conversions</th>
+                               <td  headers="col1 c2" class="cell-bg"><input id = "dc1c2" type="number"/></td>
+                               <td  headers="col2 c2" class="cell-bg"><input id = "dc2c2" type="number"/></td>
+                            </tr>
+                         
+                        </table>
+                        <input id="calDButton" type="submit" class="btn-primary" value="CALCULATE SIGNIFICANCE">
+                 </form>
+                </div>
+          
+               
+               
+                <div  id = "content-mobile" class="table-responsive">
+                    <form id="calMForm" action=""  onsubmit="mcalFunction()" novalidate="">
+                        <table class="table table-bordered">
+                        
+                            <tr>
+                              <th id = "c1">Number of Visitors</th>
+                            </tr>
+                            <tr>
+                              <th id = "col1" headers="blank" class="cell-bg">Control</th>
+                            </tr>
+                            <tr>
+                              <td headers="col1 c2" class="cell-bg"><input id = "mc1c1" type="number"/></td>
+                          </tr>
+                          <tr>
+                              <th id = "col2" headers="blank" class="cell-bg">Variation</th>
+                          </tr>
+                          <tr>
+                              <td headers="col2 c2" class="cell-bg"><input id = "mc2c1" type="number"/></td>
+                            </tr>
+                               <tr>
+                                  <th id = "c1">Number of Conversions</th>
+                                </tr>
+                                <tr>
+                                  <th id = "col1" headers="blank" class="cell-bg">Control</th>
+                                </tr>
+                                <tr>
+                                  <td headers="col1 c2" class="cell-bg"><input id = "mc1c2" type="number"/></td>
+                              </tr>
+                              <tr>
+                                  <th id = "col2" headers="blank" class="cell-bg">Variation</th>
+                              </tr>
+                              <tr>
+                                  <td headers="col2 c2" class="cell-bg"><input id = "mc2c2" type="number"/></td>
+                            </tr>
+                         
+                        </table>
+                         <input id="calMButton" type="submit" class="btn-primary" value="CALCULATE SIGNIFICANCE">
+                    </form>
+                </div>
+            </div>
+                   
+        </div>
+    </div>
+</div>
+<!--Result container -->
+<div id="resultDiv" class="resultjumbotron"  style="display: None;">
+              <div id = "content-desktop" class="container">
+                    <div class ="row">
+                        <div  class='col-sm-12' style="margin-top: 20px;" >
+                            <div style=" align-content: center; width:320px; margin-left: 400px; float:left;margin-top: 50px;">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th class="rhead">P-Value
+                                         <pre>(Range from 0-1)</pre></th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td class="rvalue"><span id="dpvalue"></span></td>
+                                
+                            </tbody>
+                            </table>
+                        </div>
+                        <div style=" align-content: center; width:320px; margin-right: 400px;float:right; margin-top: 50px;">
+                             <table>
+                                <thead>
+                                <tr>
+                                    <th class="rhead">Significance</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td class="rvalue"><span id="dsignify"></span></td>
+                                
+                            </tbody>
+                            </table>
+                        </div>
+                      
+                          
+                                
+                        </div>
+                                
+                    </div>
+              </div>  
+               <div id = "content-mobile" class="container">
+                    <div class ="row">
+                        <div  class='col-sm-12'>
+                                 <div style="width: 320px; margin-left: 50px;">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th class="rhead">P-Value
+                                         <pre>(Range from 0-1)</pre></th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td class="rvalue"><span id="mpvalue"></span></td>
+                                
+                            </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-top: 20px; width: 320px;margin-left: 50px;">
+                             <table>
+                                <thead>
+                                <tr>
+                                    <th class="rhead">Significance</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td class="rvalue"><span id="msignify"></span></td>
+                                
+                            </tbody>
+                            </table>
+                        </div>
+                                
+                        </div>
+                                
+                    </div>
+              </div>  
+</div>
+<!--Demo container -->
+<div class="demojumbotron">
+    <div class="container">
+        <div class ="row">
+            <div class='col-sm-12' style="margin-top: 100px; position: relative; align-content: center;">
+                    <h3>SCHEDULE A PERSONALIZED DEMO</h3>
+                    <p>Get in touch with us for a detailed walk-through of VWO.</p>
+                    
+                    <button class="btn-primary"> REQUEST A DEMO</button>
+                  
+                    </div>
+                    
+        </div>
+    </div>
+</div>
+<!--Foot container -->
+<div class="footjumbotron">
+    <div class="container">
+    <div class ="row">
+        <div class='col-sm-12' style="margin-top: 275px;">
+                <h2>Footer Section</h2>
+                
+                </div>
+                 
+    </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

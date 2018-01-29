@@ -1,0 +1,221 @@
+{% load staticfiles %}
+<style>
+{% block style%}
+.container{
+  font-size: 17px;
+}
+.navbar-text{
+ color:#fff !important;
+ font-size:18px;
+}
+.btn-demo{
+ color:#fff;
+ background: #12de74;
+ margin-left:10px !important; 
+}
+.btn-demo:hover{
+ color:#fff;
+ background: #1fb76e;
+
+}
+.btn-trial{
+ color:#145df0;
+ background: #fff;
+ border-color: #145df0;
+ margin-right:10px;
+}
+.btn-trial:hover{
+  color:#fff;
+  background: #145df0;
+
+}
+.nav.fill ul li a:hover {
+  color: #fff;
+  z-index: 1;
+}
+.nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+@media only screen and (min-width: 767px) {
+  .show-large {
+    display: block;
+  }
+  .show-mobile {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #content-desktop { 
+    display: none !important; 
+    }
+  #content-mobile{
+    display: inline !important;
+  }
+  }
+@media only screen and (min-width: 768px) {
+  #content-desktop { 
+    display: inline !important; 
+    }
+  #content-mobile{
+    display: none !important;
+
+  }
+  }
+.dropdown-menu:li {
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+    position: absolute;
+ }
+ h5{
+  font-size: 15px;
+  color: #4f4f4f;
+ }
+{% endblock %}
+</style>
+<nav class="navbar navbar-default pre-navbar navbar-fixed-top">
+    <div id="content-desktop">
+    <div class="container">
+      <div class="btn-toolbar">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li><a>+1 (844) 822 8378 </a></li>
+            <li><a>CONTACT US</a></li>
+            <li><a>LOGIN</a></li> 
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>         
+          <a class="navbar-brand" href="{% url 'home' %}">VWO</a> 
+           <button class="btn btn-demo centre show-large show-mobile">REQUEST A DEMO</button>
+        </div>
+        <div id = "content-desktop">
+        <div id="navbar" class="navbar-collapse collapse">    
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">PRODUCT
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">TESTING</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="#">OPTIMIZATION</a></li>
+              </ul>
+            </li>
+            <li><a>PRICING</a></li>
+            <li><a>SERVICES</a></li> 
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">RESOURCES
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <ul class="multi-column-dropdown">
+                      <h5>CASE STUDIES</h5>
+                      <li><a href="#">Optimizing Mobile Home Page Increases Conversions....</a></li>
+                      <li><a href="#">How Tough Mudder Gained a 9% Session Uplift....</a></li>
+                      <li><a href="#">How RuneScape Leveled Up Revenue ......</a></li>
+                       <li role="separator" class="divider"></li>
+                      <li><a href="#">VIEW ALL</a></li>
+                      
+                    </ul>
+                  </div>
+                   <div class="col-sm-4">
+                    <ul class="multi-column-dropdown">
+                      <h5>EBOOKS</h5>
+                      <li><a href="#">A Product Manager's Handbook for Mobile ...</a></li>
+                      <li><a href="#">VWO eCommerce Consumer Survey Report 2017</a></li>
+                      <li><a href="#">On-page Surveys Report 2016</a></li>
+                      <li role="separator" class="divider"></li>
+                     <li><a href="#">VIEW ALL</a></li>
+                    </ul>
+                  </div>
+                   <div class="col-sm-4">
+                    <ul class="multi-column-dropdown">
+                      <h5>WEBINARS</h5>
+                      <li><a href="#">How to Build a Winning Conversation ...</a></li>
+                      <li><a href="#">[Webinar] Using Learnings from Failed A/B tests...</a></li>
+                      <li><a href="#">[Webinar] Planning your Conversion Optimisation ...</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">VIEW ALL</a></li>
+                    </ul>
+                  </div>
+                  
+                </div>
+              </ul>
+            </li>
+            <button class="btn btn-demo pull-right">REQUEST A DEMO</button>
+            <button class="btn btn-trial pull-right">FREE TRIAL</button>
+            
+          </ul>           
+      </div>
+      </div>
+      <div id="content-mobile">
+      <div id="navbar" class="navbar-collapse collapse mobile">    
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">PRODUCT
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">TESTING</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="#">OPTIMIZATION</a></li>
+              </ul>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li><a>PRICING</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a>SERVICES</a></li> 
+            <li role="separator" class="divider"></li>
+            <li><a>RESOURCES</a></li> 
+
+            <button class="btn btn-trial">FREE TRIAL</button>
+            <button class="btn btn-demo ">REQUEST A DEMO</button>
+            
+            
+          </ul>           
+      </div>
+      </div>
+     </div>
+
+     <div id="content-desktop" >
+      <div class="navbar-post">
+      <div class="container">
+         <div id="navbar" class="navbar-collapse collapse">
+        <div class="navbar-header ">
+          <a class="navbar-brand" href="{% url 'home' %}">RESOURCES</a>
+        </div>
+       
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li><a>EBOOKS</a></li>
+            <li><a>WEBINARS</a></li>
+            <li><a>CASE STUDIES</a></li> 
+            <li><a>BLOG</a></li> 
+            <li><a>KNOWLEDGE BASE</a></li> 
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+   </nav>
+ 

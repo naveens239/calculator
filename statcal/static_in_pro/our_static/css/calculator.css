@@ -1,0 +1,139 @@
+
+ {% block style %}
+.jumbotron{
+    background-color: #cedaf2;
+    color:#261b06;
+    height: 500px;
+    position: relative;
+ }
+ .caljumbotron{
+    background-color: #fff;
+    color:#261b06;
+    margin-bottom: 50px;
+    position: relative;
+ }
+ .demojumbotron{
+    background-color: #21424f;
+    color: #ffffff;
+    height: 300px;
+    position: relative;
+ }
+
+ .resultjumbotron{
+    background-color: #36454e;
+    color: #ffffff;
+    height: 600px;
+    margin-top: 150px;
+    position: relative;
+
+ }
+ .footjumbotron{
+    background-color: rgba(0, 24, 41, 0.97);
+    color:#ffffff;
+    height: 700px;
+    position: relative;
+ }
+
+ .btn-primary{
+    background-color: #2691d9;
+  
+ }
+ .btn-primary:hover{
+    background-color: #1c6ca0;
+    border-color:  #473108;
+ }
+ .btn-default{
+    background-color: #261b06;
+    border-color:  #261b06;
+    color: #fff;
+ }
+ .btn-default:hover{
+    background-color: rgba(46, 110, 105, 0.9);
+    border-color:  #473108;
+    color: #fff;
+ }
+.a:hover{
+    background-color: rgba(46, 110, 105, 0.9);
+}
+.container{
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+}
+
+h2{
+  font-size: 35px;
+}
+.cell-bg{
+    background-color: #e8e8e8;
+}
+.table-size{
+    width: 800px;
+    height: 170px;
+    margin-left: 150px;
+    position: relative;
+}
+#col1{
+    color: orange;
+}
+#col2{
+    color: #2691d9;
+}
+.rhead{
+    background-color: #ffffff;
+    color: #2691d9;
+    font-size: 20px;
+    width:400px;
+    height: 120px;
+    
+}
+.rvalue{
+    background-color: #b3bcc2;
+    color: #2d3439;
+    font-size: 20px;
+    width:400px;
+    height: 120px;
+    
+}
+th,td{
+    text-align:center; 
+    vertical-align:middle;
+
+}
+#resultDiv{
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  #content-desktop { 
+    display: none !important; 
+    }
+  #content-mobile{
+    display: inline !important;
+ 
+    position: relative;
+
+    
+  }
+  }
+input{
+    text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  #content-desktop { 
+    display: inline !important; 
+
+
+    }
+  #content-mobile{
+    display: none !important;
+
+  }
+  }
+  pre{
+    font-size: 15px;
+    color: #2d3439;
+    background-color: #ffffff;
+    border: none;
+  }
+ {% endblock %}
