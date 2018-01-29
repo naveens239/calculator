@@ -1,1 +1,1 @@
-web: gunicorn calculator.statcal.statcal.wsgi --log-file -
+web: gunicorn statcal.statcal.wsgi:application --log-file -
